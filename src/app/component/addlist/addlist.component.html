@@ -1,0 +1,13 @@
+<div class="row my-2">
+    <div class="col-12 list">
+        <div class="mb-3">
+            <input type="text" #listTitle class="form-control" placeholder="Title here..." name="list-title">
+        </div>
+        <div class="mb-3">
+            <textarea name="list-item" #listItem cols="30" rows="5" placeholder="List items here..." class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn w-100" (click)="sendList(listTitle.value, listItem.value)">ADD TASK</button>
+        </div>
+    </div>
+</div>

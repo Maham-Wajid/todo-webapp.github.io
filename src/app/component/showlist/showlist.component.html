@@ -1,0 +1,42 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar border border-0">
+    <table class="table table-responsive">
+      <tbody>
+        <tr >
+            <td class="border border-0">
+                <div class="row">
+                    <div class="col-2 mx-0 px-0">
+                        <h5 style="font-weight: 600;">S.no </h5>
+                    </div>
+                  <div class="col-4 mx-0 px-0">
+                    <h5 style="font-weight: 600;">Title </h5>
+                  </div>
+                  <div class="col-6 mx-0 px-0">
+                    <h5 style="font-weight: 600;">Description </h5>
+                  </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr *ngFor="let item of item">
+            <td class="border border-0">
+                <div class="row">
+                    <div class="col-2 mx-0 px-0">
+                        <p class="my-0" style="font-size: 17px;">{{item.id}}</p>
+                    </div>
+                  <div class="col-3 mx-0 px-1">
+                    <p class="my-0" style="font-size: 17px;">{{item.listTitle}}</p>
+                  </div>
+                  <div class="col-5 mx-0 px-1">
+                    <p class="my-0 me-2" style="font-size: 17px;">{{item.listDesc}}</p>
+                  </div>
+                  <div class="col-2 mx-0 px-0">
+                    <button (click)="removeTask(item.id)" class="btn btn-danger"><span class="material-icons">restore_from_trash</span></button>
+                  </div>
+                </div>
+            </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
