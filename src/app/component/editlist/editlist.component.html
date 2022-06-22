@@ -1,0 +1,32 @@
+<div class="row my-3 justify-content-center align-items-center px-0 mx-0">
+    <div class="col-md-10 col-12 align-self-center text-center">
+        <div class="card my-5 mx-auto border border-0">
+            <div class="card-header">
+                <p class="my-0">UPDATE LIST</p>
+            </div>
+            <div class="card-body">
+                <div class="row my-2">
+                    <div class="col-12 list">
+                        <form class="form" [formGroup] = "addForm" class="form">
+
+                            <input type="hidden" name="id" formControlName="id" value="">
+
+                            <div class="mb-3">
+                                <label for="listTitle" class="form-label float-start fw-bold">Title: </label>
+                                <input type="text" #listTitle class="form-control" placeholder="Title here..." formControlName="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="listItem" class="form-label float-start fw-bold">Description: </label>
+                                <textarea formControlName="description" #listItem cols="30" rows="5" placeholder="List items here..." class="form-control"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn w-100" (click)="onUpdate()">UPDATE TASK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  

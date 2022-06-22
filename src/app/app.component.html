@@ -1,24 +1,18 @@
 <app-header></app-header>
-<div class="row my-3 gx-1">
-    <div class="col-md-6 col-12 align-self-center text-center">
-        <div class="card my-5 mx-auto border border-0" >
-            <div class="card-header">
-                <p class="my-0">ADD LIST</p>
-            </div>
-            <div class="card-body">
-              <app-addlist (storeListEvent)="storeList($event)"></app-addlist>
-            </div>
-          </div>
-    </div>
-    <div class="col-md-6 col-12 align-self-center text-center">
-        <div class="card w-75 my-5 mx-auto border border-0">
+<div>
+  <router-outlet></router-outlet>
+</div>
+<!-- <div class="row my-3 justify-content-center align-items-center px-0 mx-0">
+    <div class="col-md-10 col-12 align-self-center text-center">
+        <div class="card my-5 mx-auto border border-0">
             <div class="card-header">
                 <p class="my-0">Display LIST</p>
             </div>
-            <div class="card-body">
-              <!-- <app-showlist [title]="Title" [items]="Items"></app-showlist> -->
-              <app-showlist [item]="list"></app-showlist>
+            <div class="card-body p-0 m-0">
+              <app-showlist></app-showlist>
             </div>
           </div>
     </div>
-</div>
+</div> -->
+<!-- 
+<router-outlet></router-outlet> -->

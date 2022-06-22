@@ -1,13 +1,37 @@
-<div class="row my-2">
-    <div class="col-12 list">
-        <div class="mb-3">
-            <input type="text" #listTitle class="form-control" placeholder="Title here..." name="list-title">
-        </div>
-        <div class="mb-3">
-            <textarea name="list-item" #listItem cols="30" rows="5" placeholder="List items here..." class="form-control"></textarea>
-        </div>
-        <div class="mb-3">
-            <button class="btn w-100" (click)="sendList(listTitle.value, listItem.value)">ADD TASK</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <img src="../../../assets/img/add.png" alt="add-image" height="30px" width="30px" srcset="">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="staticBackdropLabel">ADD LIST</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row my-2">
+                    <div class="col-12 list">
+                        <form [formGroup] = "addForm" class="form">
+                            <div class="mb-3">
+                                <label for="listTitle" class="form-label float-start fw-bold">Title: </label>
+                                <input type="text" #listTitle class="form-control" placeholder="Title here..." formControlName="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="listItem" class="form-label float-start fw-bold">Description: </label>
+                                <textarea formControlName="description" #listItem cols="30" rows="5" placeholder="List items here..." class="form-control"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn w-100" (click)="onSubmit()">ADD TASK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <app-addlist (storeListEvent)="storeList($event)"></app-addlist> -->
+            </div>
         </div>
     </div>
 </div>

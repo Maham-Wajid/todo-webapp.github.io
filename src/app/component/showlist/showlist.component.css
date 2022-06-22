@@ -1,6 +1,6 @@
 .my-custom-scrollbar {
     position: relative;
-    height: 275px;
+    height: 400px;
     overflow-y: scroll;
 }
 
@@ -11,3 +11,38 @@
 .my-custom-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+.my-custom-scrollbar .table .card .card-body{
+    padding: 0 !important;
+}
+
+.my-custom-scrollbar .table .card .card-body h5{
+    line-height: 0 !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.material-icons {
+    line-height: normal !important;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/* .card{
+    box-shadow: 2px 2px 10px rgb(226, 223, 223), -1px -1px 10px rgb(226, 223, 223);
+    width: 80% !important;
+}
+
+.card .card-header{
+    background-color: orange;
+}
+
+.card .card-header p{
+    font-size: 20px;
+    font-weight: 600;
+} */

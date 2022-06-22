@@ -1,4 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NotesService } from 'src/app/notes.service';
 
 @Component({
   selector: 'app-addlist',
@@ -6,18 +9,38 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./addlist.component.css']
 })
 export class AddlistComponent implements OnInit {
+  addForm:any;
 
-  constructor() { }
+  constructor( 
+    private formBuilder: FormBuilder, 
+    private router: Router, 
+    private noteService: NotesService 
+    ) 
+    {
 
-@ Output() storeListEvent = new EventEmitter<{title:any,items:any}>();
+    this.addForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+    })
+
+   }
+
+// @ Output() storeListEvent = new EventEmitter<{title:any,items:any}>();
 
   ngOnInit(): void {
   }
 
+  reloadCurrentPage() {
+    window.location.reload();
+  }
 
-  sendList(listTitle:any, listItem:any)
-  {
-    this.storeListEvent.emit({title:listTitle, items: listItem});
+  onSubmit(){
+    this.noteService.createNote(this.addForm.value).subscribe(
+      (data:any) => {
+        this.reloadCurrentPage();
+        // this.router.navigate(['']);
+      }
+    );
   }
 
 }
